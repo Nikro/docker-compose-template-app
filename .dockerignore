@@ -10,10 +10,6 @@ __pycache__/
 *.pyz
 *.egg-info/
 
-# Ignore Docker-specific files
-Dockerfile
-docker-compose.yml
-
 # Ignore local development files
 .vscode/
 .idea/
