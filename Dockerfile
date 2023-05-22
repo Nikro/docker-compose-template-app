@@ -1,6 +1,9 @@
 # Use the official Python base image
 FROM python:3.9-slim
 
+# Install the required system dependencies
+RUN apt-get update && apt-get install -y libmariadb-dev
+
 # Set the working directory inside the container
 WORKDIR /app
 
