@@ -3,6 +3,7 @@ FROM python:3.9-slim
 
 # Install the required system dependencies
 # Import the MariaDB GPG key
+RUN apt-get update && apt-get install -y curl gnupg
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
 RUN curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 RUN apt-get update && apt-get install -y libmariadb3 libmariadb-dev
