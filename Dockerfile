@@ -3,7 +3,7 @@ FROM python:3.9-slim
 
 # Install the required system dependencies
 RUN apt-get update && apt-get install -y gcc wget
-RUN wget https://dlm.mariadb.com/3208187/MariaDB/mariadb-10.11.3/repo/debian/mariadb-10.11.3-debian-bullseye-arm64-debs.tar -O - | tar -zxf - --strip-components=1 -C /usr
+RUN wget https://dlm.mariadb.com/3208187/MariaDB/mariadb-10.11.3/repo/debian/mariadb-10.11.3-debian-bullseye-arm64-debs.tar -O - | tar -xf - --strip-components=1 -C /usr
 # Set the working directory inside the container
 WORKDIR /app
 
