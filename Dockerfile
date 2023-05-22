@@ -2,11 +2,8 @@
 FROM python:3.9-slim
 
 # Install the required system dependencies
-RUN apt-get update && apt-get install -y gnupg2
-RUN apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
-RUN echo "deb [arch=amd64,arm64,ppc64el] http://mariadb.mirror.globo.tech/repo/10.6/debian buster main" > /etc/apt/sources.list.d/mariadb.list
-# Install MariaDB client
-RUN apt-get update && apt-get install -y mariadb-client
+RUN apt-get update && apt-get install -y gcc wget
+RUN wget https://dlm.mariadb.com/3208187/MariaDB/mariadb-10.11.3/repo/debian/mariadb-10.11.3-debian-bullseye-arm64-debs.tar.gz -O - | tar -zxf - --strip-components=1 -C /usr
 
 # Set the working directory inside the container
 WORKDIR /app
