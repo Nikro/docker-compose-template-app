@@ -25,7 +25,6 @@ env/
 *.log
 
 # Docker
-Dockerfile
 docker-compose.yml
 
 # Local development settings
