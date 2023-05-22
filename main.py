@@ -13,7 +13,7 @@ db_name = os.getenv("MARIADB_DATABASE")
 db_host = os.getenv("MARIADB_HOST")
 
 # Configure the database connection
-database = Database(f"mariadb://{db_user}:{db_password}@{db_host}/{db_name}")
+database = Database(f"mysql://{db_user}:{db_password}@{db_host}/{db_name}")
 
 # SQLAlchemy metadata
 metadata = MetaData()
