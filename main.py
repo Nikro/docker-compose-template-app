@@ -10,7 +10,7 @@ app = FastAPI()
 db_user = os.getenv("MARIADB_USER")
 db_password = os.getenv("MARIADB_PASSWORD")
 db_name = os.getenv("MARIADB_DATABASE")
-db_host = "db"
+db_host = os.getenv("MARIADB_HOST")
 
 # Configure the database connection
 database = Database(f"mysql://{db_user}:{db_password}@{db_host}/{db_name}")
